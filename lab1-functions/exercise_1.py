@@ -1,13 +1,17 @@
-## place for exercise 1
-
 import matplotlib.pyplot as plt
 import numpy as np
+import argparse
 
 # chcemy to: cos(frequency * 2pi * t)
 
+parser=argparse.ArgumentParser()
+parser.add_argument("frequency", type=int)
+args=parser.parse_args()
+
 def plot_cosinus():
   t = np.arange(0.0, 2.0, 0.01)
-  s = np.cos(5 * 2*np.pi * t)
+  s = np.cos(args.frequency * 2*np.pi * t)
+  
 
   fig, ax = plt.subplots()
   ax.plot(t, s, label='base')
